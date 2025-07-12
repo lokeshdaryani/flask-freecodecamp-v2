@@ -1,43 +1,79 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Jovian Careers</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-        <style>
-            #banner {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            }
-        </style>
-    </head>
-    <body>
-        {%  include 'navbar.html' %}
-        <div class="container mt-4 mb-4">
-        <h1 class="text-center mt-4 mb-3" > {{company_name}} Careers</h1>
-        <!-- <img id = "banner" src="https://cca43cbc-2737-4e34-9b2b-0b14a76b8daf-00-1rw17aybrt048.kirk.replit.dev/static/dlxmedia-hu-52AgXRhDaPI-unsplash.jpg"> -->
-        <img id="banner" class="img-fluid" src="{{ url_for('static', filename='unsplash.jpg') }}" alt="Do What makes you Happy! :) ">
-        <h2 class="text-center mt-4 mb-4">About Us</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-            <div class="col-md-6 d-none d-md-block" style="margin-bottom:4px;">
-                <img src="/static/people_at_work.jpg" style="height:360px";>
-            </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Your Safe Space for New Beginnings</title>
+    <style>
+        body {
+            background-color: #fdf5ec;
+            font-family: 'Segoe UI', sans-serif;
+            color: #4b2e2e;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 0.3em;
+        }
+        p.subtitle {
+            font-size: 1.2em;
+            color: #4b2e2e;
+            margin-bottom: 2em;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.3em;
+            color: #5c4438;
+            margin-bottom: 2em;
+        }
+        .author {
+            font-size: 1.1em;
+            color: #5c4438;
+            margin-bottom: 3em;
+        }
+        .btn {
+            background-color: #4b7f52;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #3d6a44;
+        }
+        .image {
+            margin: 20px auto;
+        }
+        .image img {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Safe Space for New Beginnings</h1>
+    <p class="subtitle">I believe in your journey. Apply comfortably, when you feel ready. This space is made for you.</p>
+    <div class="row align-items-center">
+        <div class="col-6 col-md-6">
+            <img src="/static/girrl_with_desk_full_with_desk.jpg" 
+                 alt="Illustration of you working comfortably at a desk with a plant" 
+                 class="img-fluid rounded shadow" height="400">
         </div>
-            <div>
-                    <h2 class="text-center mt-4 mb-4">Open Positions</h2>
-                {% for job in jobs %}
-                {% include 'jobcard.html' %}
-                {% endfor %}
-            </div>
-            <div class='text-center'> 
-                <a class="btn-lg mt-4 mb-4 btn btn-primary" href="mailto:lokesh?subject=Query%20regarding%20Job%20Openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0AMy%20question%3A%20%3Cyour%20question%3E"> Contact Us</a>
-            </div>
-            {%  include 'footer.html' %}
+        <div class="col-6 col-md-6">
+            <p class="lead mt-3 mt-md-0">
+                Consider this as a comforting, warm replica of your photo on Instagram in a bit similar pose, reminding you of your calm, capable self and yes don't miss the cup of Chai which looks like coffee as I have made that ;)
+            </p>
         </div>
-    </body>
+    </div>
+
+    <p class="quote">“{{ quote }}”</p>
+    <p class="author">— Baba Lokesh</p>
+    <a href="/jobs" class="btn">Explore Jobs Made for You</a>
+</body>
 </html>
